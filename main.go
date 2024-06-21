@@ -41,7 +41,7 @@ func main() {
 	fmt.Println(string(result))
 	fmt.Printf("\nData from the prometheus:\n\n")
 	for _, val := range dataRESTAPI {
-		result, err := prom.GetPromMatrix(val.Date)
+		result, err := prom.GetPromMatrix(val.Date, project)
 		if err != nil {
 			log.Println(err)
 			continue

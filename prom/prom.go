@@ -8,10 +8,6 @@ import (
 	"strconv"
 )
 
-const (
-	project = "costmanagement-metrics-operator"
-)
-
 type response struct {
 	Status string `json:"status"`
 	Data   struct {
@@ -27,7 +23,7 @@ type response struct {
 	} `json:"data"`
 }
 
-func GetPromMatrix(date string) (float64, error) {
+func GetPromMatrix(date, project string) (float64, error) {
 	baseURL := "http://localhost:9090/api/v1/query_range"
 
 	data := neturl.Values{}
